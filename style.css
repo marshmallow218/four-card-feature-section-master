@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: var(--very-light-gray);
+}
+
+main {
+    margin: 2.5em auto;
+    width: 86%;
+}
+
+.header {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.main-heading {
+    font-size: 1.6rem;
+    font-weight: 200;
+    color: var(--very-dark-blue);
+    margin-bottom: 1em;
+}
+
+.main-heading span {
+    font-weight: 700;
+}
+
+.main-paragraph {
+    color: var(--grayish-blue);
+    margin-bottom: 4em;
+}
+
+.features {
+    display: grid;
+    gap: 1.5em;
+}
+
+.card {
+    position: relative;
+    margin: 0 auto;
+    max-width: 350px;
+    font-size: 0.875rem;
+    padding: 2em; 
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 10px 10px #e6e6e6;
+    overflow: hidden;
+}
+
+.card h2 {
+    color: var(--very-dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: var(--grayish-blue);
+    margin-bottom: 2rem;
+}
+
+.card .img {
+    display: flex;
+    justify-content: right;
+}    
+
+.feature-1::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--cyan);
+}
+
+.feature-2::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--red);
+}
+
+.feature-3::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--orange);
+}
+
+.feature-4::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--blue);
+}
+
+@media (min-width: 1200px) {
+    .html {
+        font-size: 16px;
+    }
+    
+    .main-heading {
+        font-size: 2rem;
+    }
+    
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "start mid1 end"
+        "start mid2 end";       
+    }
+
+    .feature-1  {
+        grid-area: start;
+        align-self: center;
+    }
+
+    .feature-2 {
+        grid-area: mid1;
+    }
+    
+    .feature-3 {
+        grid-area: mid2;
+    }
+    
+    .feature-4 {
+        grid-area: end;
+        align-self: center;
+    }
+}
